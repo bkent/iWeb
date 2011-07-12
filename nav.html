@@ -1,0 +1,61 @@
+<html>
+<body>
+<script type="text/javascript">
+function person()
+{
+    document.forms["form1"].submit();
+}
+</script>
+<form id="form1" action="cgi-bin/php/person.php" target="showframe" >
+<a href="javascript: person()" >
+<img src="Images/person.jpg" alt="People" title="People" border="0" />
+</a>
+</form>
+<script type="text/javascript">
+function reader()
+{
+    document.forms["form3"].submit();
+}
+</script>
+<form id="form3" action="cgi-bin/php/reader.php" target="showframe" >
+<a href="javascript: reader()" >
+<img src="Images/door.jpg" alt="Door" title="Doors" border="0" />
+</a>
+</form>
+<script type="text/javascript">
+function access()
+{
+    document.forms["form4"].submit();
+}
+</script>
+<form id="form4" action="cgi-bin/php/upload.php" target="showframe" >
+<a href="javascript: access()" >
+<img src="Images/accessevents.jpg" alt="Access Control Events" title="Access Control Events" border="0" />
+</a>
+</form>
+<script type="text/javascript">
+function settings()
+{
+    document.forms["form5"].submit();
+}
+</script>
+<form id="form5" action="cgi-bin/php/settings.php" target="showframe" >
+<a href="javascript: settings()" >
+<img src="Images/settings.jpg" alt="Settings" title="Settings" border="0" />
+</a>
+</form>
+<form action="cgi-bin/php/logout.php" target="_top">
+<input type="image" src="Images/logout.jpg" border="0" alt="Log Out" title="Log Out" onClick="javascript:return confirm('Are you sure you wish to exit?')" />
+</form>
+<br /><br /><br /><br /><br /><br />
+<script type="text/javascript">
+function controlsoft()
+{
+    document.forms["form6"].submit();
+}
+</script>
+<form id="form6" action="http://www.controlsoft.com" target="_top">
+<input type="image" src="Images/cslogo.jpg" border="0" alt="Controlsoft" title="Controlsoft" onClick="javascript:return confirm('Visit controlsoft.com?')" />
+</form>
+</body>
+</html>
