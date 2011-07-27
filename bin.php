@@ -43,7 +43,44 @@ exit;
 include "functions.php";
 $connect = new PDO("sqlite:/home/ems/web.db");
 
+if (!(isset($pagenum))) 
+
+{ 
+
+$pagenum = 1; 
+
+} 
+
 $sql = "SELECT * FROM employee WHERE Enabled ='0' ORDER BY Surname"; 
+
+$rows = 0;
+foreach ($connect->query($sql) as $info) 
+{ 
+$EmployeeID=$info['EmployeeID'];
+$rows ++;
+}
+
+//This is the number of results displayed per page 
+$page_rows = 6;
+
+//This tells us the page number of our last page 
+$last = ceil($rows/$page_rows);
+
+//this makes sure the page number isn't below one, or more than our maximum pages 
+if ($pagenum < 1) 
+{ 
+$pagenum = 1; 
+} 
+elseif ($pagenum > $last) 
+{ 
+$pagenum = $last; 
+} 
+
+//This sets the range to display in our query 
+$max = 'limit ' .($pagenum - 1) * $page_rows .',' .$page_rows;
+
+//This is your query again, the same one... the only difference is we add $max into it
+$sql_p = "SELECT * FROM employee WHERE Enabled ='0' ORDER BY Surname $max"; 
 
 //while($info = sqlite_fetch_array( $sql )) 
 
@@ -56,7 +93,7 @@ echo "<table align='center' border='0' bgcolor='white'>
 <th>&nbsp;</th></tr>
 <tr><td colspan='4'><hr></td></tr>"; 
 
-foreach ($connect->query($sql) as $info) 
+foreach ($connect->query($sql_p) as $info) 
 { 
 $FirstNames=$info['FirstNames'];
 $Surname=$info['Surname'];
@@ -82,7 +119,37 @@ echo "<td width='5%'> <a href='edit_person.php?action=edit&EmployeeID=$EmployeeI
 <?php
 echo "</tr><tr><td colspan='4'><hr></td></tr>"; 
 } 
-echo "</table>"; 
+echo "</table>";
+
+// This shows the user what page they are on, and the total number of pages
+echo " --Page $pagenum of $last-- <p>";
+
+// First we check if we are on page one. If we are then we don't need a link to the previous page or the first page so we do nothing. If we aren't then we generate links to the first page, and to the previous page.
+if ($pagenum == 1) 
+{
+} 
+else 
+{
+echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=1'> <<-First</a> ";
+echo " ";
+$previous = $pagenum-1;
+echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$previous'> <-Previous</a> ";
+} 
+
+//just a spacer
+echo " ---- ";
+
+//This does the same as above, only checking if we are on the last page, and then generating the Next and Last links
+if ($pagenum == $last) 
+{
+} 
+else {
+$next = $pagenum+1;
+echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$next'>Next -></a> ";
+echo " ";
+echo " <a href='{$_SERVER['PHP_SELF']}?pagenum=$last'>Last ->></a> ";
+} 
+
 //test();
 ?>
 </font>
