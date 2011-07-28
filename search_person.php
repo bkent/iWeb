@@ -1,5 +1,3 @@
-<html>
-<body background="/Images/bg.jpg" bgproperties="fixed" ><font face="arial">
 <?php
 
 //Check if user is legitimately logged in
@@ -18,20 +16,49 @@ exit;
 }
 
 ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html> 
+<head> 
+<title>Controlsoft iWeb</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<link href="tab.css" rel="stylesheet" type="text/css" />
+</head> 
+<body class="section-2"> 
+<div id="frame"> 
+<div id="left">
+<div id="logo">
+<img src="Images/cslogo.jpg"/>
+<?php
+echo date('d/m/Y <br /> H:i:s');
+?>
+</div>
+<div id="logout">
+<a href="logout.php"><img src="Images/delete_32x32.png"/>Logout</a>
+</div>
+</div>
+<div id="main">
+<ul id="menu"> 
+  <li id="nav-1"><a href="access.php"><img src="Images/round_ok_32x32.png"/>Events</a></li> 
+  <li id="nav-2"><a href="person.php"><img src="Images/user_32x32.png"/>People</a></li> 
+  <li id="nav-3"><a href="reader.php"><img src="Images/door_32x32.png"/>Doors</a></li> 
+  <li id="nav-4"><a href="settings.php"><img src="Images/wrench_32x32.png"/>Settings</a></li>
+</ul> 
+<div id="contents"> 
 <table align="center" border="0"><tr><td width="33%">&nbsp;</td>
 <td width="33%" align="center"><table align="center" border="0">
 <tr><td><a href="new_person.php">
-<img src="/Images/newperson.jpg" alt="Add a new person" title="Add a new person" border="0" />
+<img src="/Images/add_32x32.png" alt="Add a new person" title="Add a new person" border="0" />
 </a></td>
 <td><a href="bin.php">
-<img src="/Images/bin.jpg" alt="View Recycle Bin" title="View Recycle Bin" border="0" />
-</a></td></tr></table></td>
+<img src="/Images/trash_32x32.png" alt="View Recycle Bin" title="View Recycle Bin" border="0" />
+</a></td>
+</tr></table></td>
 <td align="right" width="33%" ><form action="search_person.php" method="get">
 <input type="text" name="q" value="
 <?php $var = @$_GET['q'];
 $trimmed = trim($var);
 echo "$trimmed";
-?>" ><input type="submit" value="Search" title="Search First name, Surname and Tag ID" >
+?>">
+<input type="submit" value="Search" title="Search First name, Surname and Tag ID">
 </td></tr></form>
 </table>
 
@@ -85,5 +112,9 @@ echo "</tr><tr><td colspan='4'><hr></td></tr>";
 } 
 echo "</table>"; 
 ?>
-</font></body>
+</font>
+</div>
+</div>
+</div>
+</body>
 </html>

@@ -14,6 +14,7 @@ if ($login == 0) {
 echo "<br /><br /><div align='center'>You are not logged on. Please click <a href='/index.html' target='_top'>here</a></div>";
 exit;
 }
+$pagenum = @$_GET['pagenum'];
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html> 
 <head> 
