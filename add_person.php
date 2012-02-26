@@ -1,6 +1,6 @@
-<?php//Check if user is legitimately logged in$loginfile = "/etc/login";$fh = fopen($loginfile, 'r') or die("can't open file");$login = fread($fh, filesize($loginfile));fclose($fh);if ($login == 0) {echo "<br /><br /><div align='center'><font face='arial'>You are not logged on. Please click <a href='/index.html' target='_top'>here</a></font></div>";exit;}include "functions.php";$int=1;$AccompaniedType=0;$AccompaniedID=0;$scan1perm = '0';$scan2perm = '0';$fname = @$_GET['fname'];$surname = @$_GET['surname'];$tagid = @$_GET['tagid'];$number = @$_GET['number'];$number = $number-1;//Get the IP address that the controller is currently communicating on$ipfile = "/etc/ip";$fh = fopen($ipfile, 'r') or die("can't open file");$ip = fread($fh, filesize($ipfile));fclose($fh);
-while ($int<=$number) {
-$reader = @$_GET[$int];
+<?php//Check if user is legitimately logged in$loginfile = "/etc/login";$fh = fopen($loginfile, 'r') or die("can't open file");$login = fread($fh, filesize($loginfile));fclose($fh);if ($login == 0) {echo "<br /><br /><div align='center'><font face='arial'>You are not logged on. Please click <a href='/index.html' target='_top'>here</a></font></div>";exit;}include "functions.php";$int=1;$AccompaniedType=0;$AccompaniedID=0;$scan1perm = '0';$scan2perm = '0';$fname = @$_POST['fname'];$surname = @$_POST['surname'];$tagid = @$_POST['tagid'];$number = @$_POST['number'];$number = $number-1;//Get the IP address that the controller is currently communicating on$ipfile = "/etc/ip";$fh = fopen($ipfile, 'r') or die("can't open file");$ip = fread($fh, filesize($ipfile));fclose($fh);
+while ($int<=$number) {$inputname = 'check' . $int;
+$reader = @$_POST[$inputname];
 ${r.$int}=$reader;
 $int++;
 }

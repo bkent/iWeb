@@ -59,7 +59,7 @@ foreach($mobile_browser as $val) {
 if ($i == 0) {
 //if($pos === false) {
  // string needle NOT found in haystack
- echo "<meta http-equiv='refresh' content='0;URL=/cgi-bin/php/access.php'>";
+ echo "<meta http-equiv='refresh' content='0;URL=/home.html'>";
  //echo $useragent;
 }
 else {

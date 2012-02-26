@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Unobtrusive, Accessible Ajax (a.k.a. "Hijax")</title>
+	<script src="ao.js" type="text/javascript"></script>
+	<script src="hijax.js" type="text/javascript"></script>
+	<style type="text/css">
+	body { font: normal 12px Georgia; }
+	label { padding-right: 10px; }
+	</style>
+</head>
+
+<body>
+
+<ul>
+	<li><a href="/">cherny.com</a></li>
+	<li><a href="../">demos</a></li>
+</ul>
+
+<h1>Testing Unobtrusive, Accessible Ajax (a.k.a. "Hijax")</h1>
+
+<p>This form will work with scripts enabled (using Ajax), or accessibly in the traditional way with scripts disabled.</p>
+
+<p>See the article, "<a href="">Accessible Ajax, Basic Hijax Example</a>"</p>
+
+<div id="waiting" style="display: none;">
+                Loading...<br />
+                <img src="images/ajax-loader.gif" title="Loader" alt="Loader" />
+            </div>
+			
+<div id="output">
+<form action="cgi-bin/php/post.php" method="post">
+
+<p><label for="username">Your Name:</label>
+	<input type="text" id="username" name="username" />
+</p>
+
+<p><label for="country">Country:</label>
+	<input type="text" id="country" name="country" />
+</p>
+
+<p><input type="submit" /></p>
+		
+</form>
+</div>
+
+</body>
+</html>

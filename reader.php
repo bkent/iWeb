@@ -21,26 +21,8 @@ exit;
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <link href="tab.css" rel="stylesheet" type="text/css" />
 </head> 
-<body class="section-3"> 
-<div id="frame"> 
-<div id="left">
-<div id="logo">
-<img src="Images/cslogo.jpg"/>
-<?php
-echo date('d/m/Y <br /> H:i:s');
-?>
-</div>
-<div id="logout">
-<a href="logout.php"><img src="Images/delete_32x32.png"/>Logout</a>
-</div>
-</div>
-<div id="main">
-<ul id="menu"> 
-  <li id="nav-1"><a href="access.php"><img src="Images/round_ok_32x32.png"/>Events</a></li> 
-  <li id="nav-2"><a href="person.php"><img src="Images/user_32x32.png"/>People</a></li> 
-  <li id="nav-3"><a href="reader.php"><img src="Images/door_32x32.png"/>Doors</a></li> 
-  <li id="nav-4"><a href="settings.php"><img src="Images/wrench_32x32.png"/>Settings</a></li>
-</ul> 
+<body> 
+
 <div id="contents">
 <?php
 
@@ -59,8 +41,8 @@ $sql = "SELECT * FROM systemscanners ORDER BY Name";
 
 echo "<table align='center' border='0' bgcolor='white'>
 <tr><td colspan='2'><hr></td></tr>
-<tr><th>Name</th>
-<th>&nbsp;</th></tr>
+<tr><th>Reader Name</th>
+<th>Action</th></tr>
 <tr><td colspan='2'><hr></td></tr>"; 
 
 foreach ($connect->query($sql) as $info) 
@@ -76,5 +58,5 @@ echo "</tr><tr><td colspan='2'><hr></td></tr>";
 } 
 echo "</table>"; 
 ?>
-</font></body>
+</body>
 </html>

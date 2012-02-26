@@ -1,0 +1,113 @@
+body {
+ /*text-align:center;*/
+ margin-top:0px;
+ margin-bottom:0px;
+ background: url(../images/body-bkg.png) repeat-x;
+ font-family: Georgia;
+ text-align:left;
+ font-size: 12px;
+}
+
+ #frame {
+ width:750px;
+ padding-top: 10px;
+ margin-right:auto;
+ margin-left:auto;
+ text-align:center;
+ border-left: 0px solid #999;
+ border-bottom: 0px solid #999;
+ border-right: 0px solid #999;
+ height: 560px;
+ }
+ 
+#iwebdivcontainer {
+ width:750px;
+ border : none;
+ clear : both;
+ font-family: Georgia;
+ padding-top: 10px;
+ margin-right:auto;
+ margin-left:auto;
+ font-size: 15px;
+ text-align:left;
+ border-left: 0px solid #999;
+ border-bottom: 0px solid #999;
+ border-right: 0px solid #999;
+ height: 560px;
+ }
+ 
+ #iwebdivcontainer a:link {
+		color: #339;
+		font-weight: normal;
+		text-decoration: underline;
+		}
+#iwebdivcontainer a:visited {
+		color: #339;
+		font-weight: normal;
+		text-decoration: underline;
+		}
+
+ #bottom{
+ float:left;
+ width:750px;
+ height:30px;
+ margin:0px;
+ padding:0px;
+ text-align: center;
+ font-family: Georgia;
+ font-size: 12px;
+ font-weight:normal;
+ line-height: 30px;
+ text-indent:10px;
+ color: #fff;
+ /*background: #D6D6EA;*/
+ background: black url(indentbg.gif) center center repeat-x;
+}
+ 
+/* ######### CSS for Indented CSS Tabs. Remove if not using ######### */
+
+
+.indentmenu{
+font-size: 12px;
+width: 100%; /*leave this value as is in most cases*/
+text-align:center;
+}
+
+.indentmenu ul{
+font-size: 12px;
+margin: 0;
+padding: 0;
+float: left;
+/* width: 80%; width of menu*/
+border-top: 1px solid #343399; /*darkred border*/
+background: black url(indentbg.gif) center center repeat-x;
+}
+
+.indentmenu ul li{
+font-size: 12px;
+font-weight:bold; 
+display: inline;
+}
+
+.indentmenu ul li a{
+font-size: 12px;
+float: left;
+color: #FFFFFF; /*text color*/
+padding: 3px 11px;
+text-decoration: none;
+border-right: 1px solid #343399; /*darkred divider between menu items*/
+border-left: 1px solid #343399;
+}
+
+.indentmenu ul li a:visited{
+font-size: 12px;
+color: #FFFFFF;
+}
+
+.indentmenu ul li a.selected{
+color: #292C62 !important;
+font-size: 12px;
+padding-top: 4px; /*shift text down 1px*/
+padding-bottom: 2px;
+background: black url(indentbg2.gif) center center repeat-x;
+}

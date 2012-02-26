@@ -15,12 +15,12 @@ echo "<br /><br /><div align='center'><font face='arial'>You are not logged on. 
 exit;
 }
 
-$fname = @$_GET['fname'];
-$surname = @$_GET['surname'];
-$tagid = @$_GET['tagid'];
-$EmployeeID = @$_GET['empid'];
-$AccompaniedType = @$_GET['1'];
-$AccompaniedID = @$_GET['2'];
+$fname = @$_POST['fname'];
+$surname = @$_POST['surname'];
+$tagid = @$_POST['tagid'];
+$EmployeeID = @$_POST['empid'];
+$AccompaniedType = @$_POST['check1'];
+$AccompaniedID = @$_POST['check2'];
 $scan1perm = $AccompaniedType;
 $scan2perm = $AccompaniedID;
 
