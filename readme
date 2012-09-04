@@ -1,0 +1,3 @@
+The I-Web is a web interface for the I-Net controller.
+Written in PHP, it interacts with the embedded applictions on the
+controller by communicating over a socket connection.
